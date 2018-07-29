@@ -1,8 +1,16 @@
 ﻿using System;
 
-public class MainClass
+
+
+public class main
 {
-    public static void Main()
+
+    static void main(string[] args)
+    {
+        tries(1);
+
+    }
+    public static void Main(int tries)
     {
 
         //if goAgain= "Y";
@@ -31,20 +39,40 @@ public class MainClass
             //console.writeline which forces a new line and your input will go on the next line
             // \t adds a tab to the line which helps formatting
 
+            
+
+           
+            double roomLength;
             Console.Write("\t Tell me the length of the room : \t");
-            double roomLength = Convert.ToDouble(Console.ReadLine());
+            while (!Double.TryParse(Console.ReadLine(), out roomLength))
+            {
+                Console.WriteLine("This is incorrect format");
+            }
 
+
+            double roomwidth;
             Console.Write("\t Tell me the width of the room  : \t");
-            double roomWidth = Convert.ToDouble(Console.ReadLine());
+            while (!Double.TryParse(Console.ReadLine(), out roomwidth))
+            {
+                Console.WriteLine("This is incorrect format");
+            }
 
+            double roomHeight;
             Console.Write("\t Tell me the height of the room : \t");
-            double roomHeight = Convert.ToDouble(Console.ReadLine());
+            while (!Double.TryParse(Console.ReadLine(), out roomHeight))
+            {
+                Console.WriteLine("This is incorrect format");
+            }
 
             Console.WriteLine("");
 
+            double paintCover;
             Console.WriteLine("\t Check the instructions on the paint can and tell me");
             Console.Write("\t how many sq m of wall one litre of paint will cover : ");
-            double paintCover = Convert.ToDouble(Console.ReadLine());
+            while (!Double.TryParse(Console.ReadLine(), out paintCover))
+            {
+                Console.WriteLine("This is incorrect format");
+            }
 
             Console.WriteLine("");
 
@@ -75,8 +103,10 @@ public class MainClass
 
             Console.Write("\t Happy Painting.......Press ENTER key to restart");
             Console.ReadLine();
-
-
+            break;
+            {
+                return;
+            }
             
         } while (x < 1);
 
